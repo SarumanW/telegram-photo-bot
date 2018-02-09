@@ -92,17 +92,15 @@ public class Bot extends TelegramLongPollingBot {
                         inputMedia.add(new InputMediaPhoto().setMedia(s));
                     }
 
-                    SendMediaGroup mg = new SendMediaGroup()
-                            .setChatId(chatId)
-                            .setMedia(inputMedia);
+                    SendMediaGroup mg = new SendMediaGroup();
+                    mg.setMedia(inputMedia);
+                    mg.setChatId(chatId);
 
                     try {
                         sendMediaGroup(mg);
                     } catch (TelegramApiException e) {
                         e.printStackTrace();
                     }
-
-
                 }
             }
         }

@@ -6,7 +6,7 @@ public class QueryParser {
         String[] result = new String[2];
         int lastSpace = query.lastIndexOf(' '); // check another time
         result[0] = query.substring(0, lastSpace);
-        result[1] = query.substring(lastSpace);
+        result[1] = query.substring(lastSpace + 1);
         return result;
     }
 }
